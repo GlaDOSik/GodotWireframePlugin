@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=1]
+
+[sub_resource type="MaterialShader" id=1]
+
+_code = { "fragment":"", "fragment_ofs":0, "light":"uniform color ambient;\nLIGHT = ambient.xyz;", "light_ofs":0, "vertex":"VERTEX = VERTEX * 1.005;", "vertex_ofs":0 }
+
+[resource]
+
+flags/visible = true
+flags/double_sided = false
+flags/invert_faces = false
+flags/unshaded = false
+flags/on_top = false
+flags/lightmap_on_uv2 = true
+flags/colarray_is_srgb = false
+params/blend_mode = 0
+params/depth_draw = 1
+params/line_width = 1.4013e-43
+shader/shader = SubResource( 1 )
+shader_param/ambient = Color( 0.117647, 0.12549, 0.14902, 1 )
+

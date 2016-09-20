@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=1]
+
+[sub_resource type="MaterialShaderGraph" id=1]
+
+_code = { "fragment":"vec3 nd1sl9=COLOR.rgb;\nvec3 DIFFUSE_OUT=vec3(0,0,0);\nfloat ALPHA_OUT=0;\nDIFFUSE_OUT=nd1sl9;\nDIFFUSE=DIFFUSE_OUT;\n", "fragment_ofs":0, "light":"vec3 nd1sl5=DIFFUSE;\nLIGHT=nd1sl5;\n", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
+_data = { "shaders":[ [ 0, 33, Vector2( 350, 40 ), null, null, [  ], 1, 0, Vector2( 50, 40 ), null, null, [  ] ], [ 0, 33, Vector2( 481, 50 ), null, null, [ 0, 1, 9 ], 1, 0, Vector2( 50, 40 ), null, null, [  ] ], [ 0, 33, Vector2( 524, 29 ), null, null, [ 0, 1, 5 ], 1, 0, Vector2( 50, 40 ), null, null, [  ] ] ] }
+
+[resource]
+
+flags/visible = true
+flags/double_sided = false
+flags/invert_faces = false
+flags/unshaded = true
+flags/on_top = false
+flags/lightmap_on_uv2 = true
+flags/colarray_is_srgb = false
+params/blend_mode = 0
+params/depth_draw = 1
+params/line_width = 1.0
+shader/shader = SubResource( 1 )
+

@@ -1,0 +1,781 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://addons/Wireframe Tool/dock.gd" type="Script" id=1]
+
+[node name="WFT" type="ScrollContainer"]
+
+rect/min_size = Vector2( 0, 200 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 213.0
+margin/bottom = 376.0
+scroll/horizontal = true
+scroll/vertical = true
+script/script = ExtResource( 1 )
+
+[node name="vbox" type="VBoxContainer" parent="."]
+
+rect/min_size = Vector2( 0, 410 )
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 201.0
+margin/bottom = 418.0
+alignment = 0
+
+[node name="lblChooseSur" type="Label" parent="vbox"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 201.0
+margin/bottom = 14.0
+text = "Target Mesh/Surface"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="hboxSur1" type="HBoxContainer" parent="vbox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 18.0
+margin/right = 201.0
+margin/bottom = 38.0
+alignment = 0
+
+[node name="btnTMesh" type="OptionButton" parent="vbox/hboxSur1"]
+
+rect/min_size = Vector2( 95, 0 )
+hint/tooltip = "You can select multiple meshes. Choose one you want to use. This will be the target mesh if you going to copy surface from another mesh."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 95.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Mesh"
+flat = false
+align = 0
+selected = -1
+items = [  ]
+
+[node name="btnTSur" type="OptionButton" parent="vbox/hboxSur1"]
+
+rect/min_size = Vector2( 95, 0 )
+hint/tooltip = "You can edit only one surface at time. Select the desired one. This surface will be edited through selection tools, actions and shaders."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 99.0
+margin/top = 0.0
+margin/right = 194.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Surface"
+flat = false
+align = 0
+selected = -1
+items = [  ]
+
+[node name="hboxSur2" type="HBoxContainer" parent="vbox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 42.0
+margin/right = 201.0
+margin/bottom = 62.0
+alignment = 0
+
+[node name="btnRenameS" type="Button" parent="vbox/hboxSur2"]
+
+hint/tooltip = "Do NOT rename surfaces through the editor, if you used wireframe tool (Generate) on the mesh."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 96.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Rename surf."
+flat = false
+
+[node name="txtedSurName" type="LineEdit" parent="vbox/hboxSur2"]
+
+visibility/visible = false
+rect/min_size = Vector2( 85, 0 )
+hint/tooltip = "Rename the surface. If your name isn\'t unique, the tool will make sure it is."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 85.0
+margin/bottom = 20.0
+placeholder/alpha = 0.6
+focus_mode = 2
+caret/caret_blink = false
+caret/caret_blink_speed = 0.65
+
+[node name="btnRenameOk" type="Button" parent="vbox/hboxSur2"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 31.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "OK"
+flat = false
+
+[node name="btnDeleteS" type="Button" parent="vbox/hboxSur2"]
+
+hint/tooltip = "Delete selected surface."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = 0.0
+margin/right = 187.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Delete surf."
+flat = false
+
+[node name="lblCopySur" type="Label" parent="vbox"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 66.0
+margin/right = 201.0
+margin/bottom = 80.0
+text = "Source Mesh/Surface"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="hboxSur3" type="HBoxContainer" parent="vbox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 84.0
+margin/right = 201.0
+margin/bottom = 104.0
+alignment = 0
+
+[node name="btnSMesh" type="OptionButton" parent="vbox/hboxSur3"]
+
+rect/min_size = Vector2( 75, 0 )
+hint/tooltip = "Select source mesh."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 75.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Mesh"
+flat = false
+align = 0
+selected = -1
+items = [  ]
+
+[node name="btnSSur" type="OptionButton" parent="vbox/hboxSur3"]
+
+rect/min_size = Vector2( 75, 0 )
+hint/tooltip = "Select source surface from selected mesh."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 79.0
+margin/top = 0.0
+margin/right = 154.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Surface"
+flat = false
+clip_text = true
+align = 0
+selected = -1
+items = [  ]
+
+[node name="btnCopyS" type="Button" parent="vbox/hboxSur3"]
+
+hint/tooltip = "Copy this surface to target mesh."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 158.0
+margin/top = 0.0
+margin/right = 201.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Copy"
+flat = false
+
+[node name="sep1" type="HSeparator" parent="vbox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 108.0
+margin/right = 201.0
+margin/bottom = 111.0
+custom_constants/separation = 0
+
+[node name="lblWFTools" type="Label" parent="vbox"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 115.0
+margin/right = 201.0
+margin/bottom = 129.0
+text = "Wireframe Tools"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="hboxWFT" type="HBoxContainer" parent="vbox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 133.0
+margin/right = 201.0
+margin/bottom = 153.0
+alignment = 0
+
+[node name="btnGenerate" type="Button" parent="vbox/hboxWFT"]
+
+hint/tooltip = "Generate a wireframe from target surface."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 71.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Generate"
+flat = false
+
+[node name="btnCommit" type="Button" parent="vbox/hboxWFT"]
+
+hint/tooltip = "Commit the edits and delete metadata. After this, you won\'t be able to edit the wireframe again."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 75.0
+margin/top = 0.0
+margin/right = 138.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Commit"
+flat = false
+
+[node name="btnCancel" type="Button" parent="vbox/hboxWFT"]
+
+hint/tooltip = "Cancel the edits and bring back the original mesh. It will also delete metadata."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 142.0
+margin/top = 0.0
+margin/right = 196.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Cancel"
+flat = false
+
+[node name="lblSelTools" type="Label" parent="vbox"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 157.0
+margin/right = 201.0
+margin/bottom = 171.0
+text = "Selection Tools"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="group" type="ButtonGroup" parent="vbox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 175.0
+margin/right = 201.0
+margin/bottom = 219.0
+alignment = 0
+
+[node name="GridContainer" type="GridContainer" parent="vbox/group"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 201.0
+margin/bottom = 44.0
+columns = 3
+
+[node name="btnNone" type="Button" parent="vbox/group/GridContainer"]
+
+hint/tooltip = "Plugin won\'t capture the input so you can use spatial gizmos."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 46.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "None"
+flat = false
+
+[node name="btnVertex" type="Button" parent="vbox/group/GridContainer"]
+
+hint/tooltip = "Select one vertex."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 50.0
+margin/top = 0.0
+margin/right = 110.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Vertex"
+flat = false
+
+[node name="btnEdge" type="Button" parent="vbox/group/GridContainer"]
+
+hint/tooltip = "Select one or multiple edges."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 114.0
+margin/top = 0.0
+margin/right = 156.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Edge"
+flat = false
+
+[node name="btnLoop" type="Button" parent="vbox/group/GridContainer"]
+
+visibility/visible = false
+hint/tooltip = "Select the loop."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 24.0
+margin/right = 46.0
+margin/bottom = 44.0
+disabled = true
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Loop"
+flat = false
+
+[node name="btnAll" type="Button" parent="vbox/group/GridContainer"]
+
+hint/tooltip = "Select every edge."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 24.0
+margin/right = 46.0
+margin/bottom = 44.0
+disabled = true
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "All"
+flat = false
+
+[node name="btnInverse" type="Button" parent="vbox/group/GridContainer"]
+
+hint/tooltip = "Inverse the selection."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 50.0
+margin/top = 24.0
+margin/right = 110.0
+margin/bottom = 44.0
+disabled = true
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Inverse"
+flat = false
+
+[node name="lblActions" type="Label" parent="vbox"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 223.0
+margin/right = 201.0
+margin/bottom = 237.0
+text = "Actions"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="gridActions" type="HBoxContainer" parent="vbox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 241.0
+margin/right = 201.0
+margin/bottom = 261.0
+alignment = 0
+
+[node name="btnDelete" type="Button" parent="vbox/gridActions"]
+
+hint/tooltip = "Delete selected vertex or edges."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 55.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Delete"
+flat = false
+
+[node name="btnColor" type="Button" parent="vbox/gridActions"]
+
+hint/tooltip = "Color the selection with choosen color."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 59.0
+margin/top = 0.0
+margin/right = 104.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Color"
+flat = false
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="vbox/gridActions"]
+
+rect/min_size = Vector2( 60, 0 )
+hint/tooltip = "Choose the color for action Color."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 108.0
+margin/top = 0.0
+margin/right = 168.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+color = Color( 1, 1, 1, 1 )
+edit_alpha = true
+
+[node name="lblShaders" type="Label" parent="vbox"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 265.0
+margin/right = 201.0
+margin/bottom = 279.0
+text = "Materials"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="hboxMaterials" type="HBoxContainer" parent="vbox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 283.0
+margin/right = 201.0
+margin/bottom = 303.0
+alignment = 0
+
+[node name="btnUnlit" type="Button" parent="vbox/hboxMaterials"]
+
+hint/tooltip = "Set/unset unlit material to surface. This one shows vertex colors and is automatically set after you hit Generate button."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 43.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Unlit"
+flat = false
+
+[node name="btnLit" type="Button" parent="vbox/hboxMaterials"]
+
+hint/tooltip = "Set/unset lit material to surface which shows vertex colors."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 47.0
+margin/top = 0.0
+margin/right = 75.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Lit"
+flat = false
+
+[node name="btnOutline" type="Button" parent="vbox/hboxMaterials"]
+
+hint/tooltip = "Set/unset outline material to surface. Create a separate wireframe and use this shader on it. Occlude Use it on separate generated wireframe (from FLAT shaded geometry!!) for outline together with occluder geometry."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 79.0
+margin/top = 0.0
+margin/right = 123.0
+margin/bottom = 20.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Outl."
+flat = false
+
+[node name="btnOccluder" type="Button" parent="vbox/hboxMaterials"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 127.0
+margin/top = 0.0
+margin/right = 172.0
+margin/bottom = 20.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Occl."
+flat = false
+
+[node name="sep2" type="HSeparator" parent="vbox"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 307.0
+margin/right = 201.0
+margin/bottom = 310.0
+
+[node name="btnHelp" type="Button" parent="vbox"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 314.0
+margin/right = 201.0
+margin/bottom = 334.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Show help"
+flat = false
+
+[node name="lblWarning" type="Label" parent="vbox"]
+
+rect/min_size = Vector2( 0, 80 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 338.0
+margin/right = 201.0
+margin/bottom = 418.0
+custom_colors/font_color = Color( 1, 0.253906, 0.463745, 1 )
+text = "Warnings:"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="sep3" type="HSeparator" parent="vbox"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 422.0
+margin/right = 201.0
+margin/bottom = 425.0
+
+[node name="lblVertex" type="Label" parent="vbox"]
+
+visibility/visible = false
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 429.0
+margin/right = 201.0
+margin/bottom = 443.0
+text = "Vertex Cloud Tool"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
